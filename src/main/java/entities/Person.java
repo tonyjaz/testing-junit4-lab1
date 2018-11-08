@@ -1,10 +1,10 @@
 package entities;
 
 import com.google.common.base.Preconditions;
-import org.apache.commons.collections4.ListUtils;
+import org.apache.commons.collections4.SetUtils;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Set;
 
 import static java.util.Objects.nonNull;
 
@@ -17,14 +17,14 @@ public class Person {
     private String surname;
     private int age;
     private BigDecimal salary;
-    private List<String> hobbies;
+    private Set<String> hobbies;
 
     public Person(int id, 
                   String name, 
                   String surname, 
                   int age, 
                   BigDecimal salary, 
-                  List<String> hobbies) {
+                  Set<String> hobbies) {
         this.id = id;
         
         Preconditions.checkArgument(nonNull(name));
@@ -41,7 +41,7 @@ public class Person {
         Preconditions.checkArgument(salary.compareTo(BigDecimal.ZERO) > 0);
         this.salary = salary;
         
-        this.hobbies = ListUtils.emptyIfNull(hobbies);
+        this.hobbies = SetUtils.emptyIfNull(hobbies);
     }
 
     public int getId() {
@@ -90,12 +90,12 @@ public class Person {
         this.salary = salary;
     }
 
-    public List<String> getHobbies() {
+    public Set<String> getHobbies() {
         return hobbies;
     }
 
-    public void setHobbies(List<String> hobbies) {
-        this.hobbies = ListUtils.emptyIfNull(hobbies);
+    public void setHobbies(Set<String> hobbies) {
+        this.hobbies = SetUtils.emptyIfNull(hobbies);
     }
     
     public void addAllHobbiesTo(Person other) {

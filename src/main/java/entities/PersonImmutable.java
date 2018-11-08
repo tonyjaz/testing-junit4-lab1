@@ -1,11 +1,11 @@
 package entities;
 
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
-import org.apache.commons.collections4.ListUtils;
+import com.google.common.collect.ImmutableSet;
+import org.apache.commons.collections4.SetUtils;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Set;
 import java.util.function.Predicate;
 
 import static java.util.Objects.nonNull;
@@ -19,14 +19,14 @@ public class PersonImmutable {
     private final String surname;
     private final int age;
     private final BigDecimal salary;
-    private final ImmutableList<String> hobbies;
+    private final ImmutableSet<String> hobbies;
 
     private PersonImmutable(int id, 
                     String name, 
                     String surname, 
                     int age, 
                     BigDecimal salary,
-                    List<String> hobbies) {
+                    Set<String> hobbies) {
         this.id = id;
 
         Preconditions.checkArgument(nonNull(name));
@@ -43,7 +43,7 @@ public class PersonImmutable {
         Preconditions.checkArgument(salary.compareTo(BigDecimal.ZERO) > 0);
         this.salary = salary;
 
-        this.hobbies = ImmutableList.copyOf(ListUtils.emptyIfNull(hobbies));
+        this.hobbies = ImmutableSet.copyOf(SetUtils.emptyIfNull(hobbies));
     }
     
     public static Predicate<PersonImmutable> olderThan(int age) {
@@ -70,7 +70,7 @@ public class PersonImmutable {
         return salary;
     }
 
-    public ImmutableList<String> getHobbies() {
+    public ImmutableSet<String> getHobbies() {
         return hobbies;
     }
 
@@ -104,7 +104,7 @@ public class PersonImmutable {
         private String surname;
         private int age;
         private BigDecimal salary;
-        private ImmutableList<String> hobbies;
+        private ImmutableSet<String> hobbies;
 
         public Builder id(int id) {
             this.id = id;
@@ -131,8 +131,8 @@ public class PersonImmutable {
             return this;
         }
 
-        public Builder hobbies(List<String> hobbies) {
-            this.hobbies = ImmutableList.copyOf(hobbies);
+        public Builder hobbies(Set<String> hobbies) {
+            this.hobbies = ImmutableSet.copyOf(hobbies);
             return this;
         }
 
