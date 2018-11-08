@@ -24,7 +24,7 @@ Junit4 basics training exercises.
             assertThat(person.getAge(), is(10));
         }    
         ```
-    imports:
+        imports:
         ```
         import static org.hamcrest.CoreMatchers.is;
         import static org.junit.Assert.*;
