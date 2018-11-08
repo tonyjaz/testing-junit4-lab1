@@ -34,5 +34,6 @@ Junit4 basics training exercises.
 * **Immutable**: https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html
 * **JavaBeans**: https://en.wikipedia.org/wiki/JavaBeans
 * **Set**: https://www.geeksforgeeks.org/set-in-java/
+* **List**: https://docs.oracle.com/javase/8/docs/api/java/util/List.html
 * **Equals contract**: https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals(java.lang.Object)
 * **Hashcode contract**: https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode()
