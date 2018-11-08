@@ -7,10 +7,18 @@ Junit4 basics training exercises.
     * constructor - exceptions (parameter validation)
     * setters + getters - OK
     * setters - exceptions (parameter validation)
+    * check equals contract
+    * check hashcode contract
+    * addAllHobbiesTo - no common hobbies
+    * addAllHobbiesTo - some common hobbies
+    * addHobby - add already existing
+    * addHobby - add new
 2. Test class `entities.PersonImmutable`
     * constructor - OK
     * constructor - exceptions (parameter validation)
     * check if hobbies list is immutable (try to add something)
+    * check equals contract
+    * check hashcode contract
 3. Test class `service.PersonImmutableService`
     * checkIfAnyHasGivenName - OK
     * checkIfAnyHasGivenName - exception (parameter validation)
@@ -25,3 +33,6 @@ Junit4 basics training exercises.
 * **References**: http://www.informit.com/articles/article.aspx?p=174371&seqNum=4
 * **Immutable**: https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html
 * **JavaBeans**: https://en.wikipedia.org/wiki/JavaBeans
+* **Set**: https://www.geeksforgeeks.org/set-in-java/
+* **Equals contract**: https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals(java.lang.Object)
+* **Hashcode contract**: https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode()
