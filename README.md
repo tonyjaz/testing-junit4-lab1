@@ -16,7 +16,7 @@ Junit4 basics training exercises.
 2. Test class `entities.PersonImmutable`
     * constructor - OK
     * constructor - exceptions (parameter validation)
-    * check if hobbies list is immutable (try to add something)
+    * check if hobbies set is immutable (try to add something)
     * check equals contract
     * check hashcode contract
 3. Test class `service.PersonImmutableService`
