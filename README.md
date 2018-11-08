@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/testing-junit4-lab1.svg?branch=master)](https://travis-ci.com/mtumilowicz/testing-junit4-lab1)
+
 # testing-junit4-lab1
 Junit4 basics training exercises.
 
