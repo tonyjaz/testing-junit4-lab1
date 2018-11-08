@@ -19,11 +19,14 @@ public class Person {
     private BigDecimal salary;
     private Set<String> hobbies;
 
-    public Person(int id, 
-                  String name, 
-                  String surname, 
-                  int age, 
-                  BigDecimal salary, 
+    public Person() {
+    }
+
+    public Person(int id,
+                  String name,
+                  String surname,
+                  int age,
+                  BigDecimal salary,
                   Set<String> hobbies) {
         this.id = id;
         
