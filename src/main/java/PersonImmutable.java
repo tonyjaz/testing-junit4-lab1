@@ -1,7 +1,11 @@
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import org.apache.commons.collections4.ListUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
+
+import static java.util.Objects.nonNull;
 
 /**
  * Created by mtumilowicz on 2018-11-08.
@@ -19,13 +23,24 @@ public class PersonImmutable {
                     String surname, 
                     int age, 
                     BigDecimal salary,
-                    ImmutableList<String> hobbies) {
+                    List<String> hobbies) {
         this.id = id;
+
+        Preconditions.checkArgument(nonNull(name));
         this.name = name;
+
+        Preconditions.checkArgument(nonNull(surname));
+        Preconditions.checkArgument(surname.matches("[a-zA-Z]+"));
         this.surname = surname;
+
+        Preconditions.checkArgument(age >= 0);
         this.age = age;
+
+        Preconditions.checkArgument(nonNull(salary));
+        Preconditions.checkArgument(salary.compareTo(BigDecimal.ZERO) > 0);
         this.salary = salary;
-        this.hobbies = hobbies;
+
+        this.hobbies = ImmutableList.copyOf(ListUtils.emptyIfNull(hobbies));
     }
 
     public int getId() {
