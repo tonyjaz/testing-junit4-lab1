@@ -1,3 +1,5 @@
+package entities;
+
 import com.google.common.base.Preconditions;
 import org.apache.commons.collections4.ListUtils;
 
@@ -94,5 +96,35 @@ public class Person {
 
     public void setHobbies(List<String> hobbies) {
         this.hobbies = ListUtils.emptyIfNull(hobbies);
+    }
+    
+    public void addAllHobbiesTo(Person other) {
+        Preconditions.checkArgument(nonNull(other));
+        
+        other.hobbies.addAll(this.hobbies);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        return id == person.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 }

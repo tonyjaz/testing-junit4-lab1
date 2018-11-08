@@ -1,9 +1,12 @@
+package entities;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import org.apache.commons.collections4.ListUtils;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static java.util.Objects.nonNull;
 
@@ -42,6 +45,10 @@ public class PersonImmutable {
 
         this.hobbies = ImmutableList.copyOf(ListUtils.emptyIfNull(hobbies));
     }
+    
+    public static Predicate<PersonImmutable> olderThan(int age) {
+        return person -> nonNull(person) && person.getAge() > age;
+    }
 
     public int getId() {
         return id;
@@ -65,6 +72,30 @@ public class PersonImmutable {
 
     public ImmutableList<String> getHobbies() {
         return hobbies;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PersonImmutable that = (PersonImmutable) o;
+
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 
     class Builder {
