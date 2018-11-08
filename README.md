@@ -62,7 +62,7 @@ Junit4 basics training exercises.
     * checkIfAnyHasGivenName - exception (parameter validation)
     * findAllOlderThanGivenAge - OK
     
-1. To read
+# To read
 * **Java**
     * **Packages**: https://docs.oracle.com/javase/tutorial/java/package/packages.html
     * **Access modifiers**: http://tutorials.jenkov.com/java/access-modifiers.html
