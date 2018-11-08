@@ -104,8 +104,8 @@ public class Person {
         other.hobbies.addAll(this.hobbies);
     }
     
-    public void addHobbie(String hobbie) {
-        this.hobbies.add(hobbie);
+    public void addHobby(String hobby) {
+        this.hobbies.add(hobby);
     }
 
     @Override
