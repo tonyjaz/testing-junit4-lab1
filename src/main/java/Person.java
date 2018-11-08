@@ -1,4 +1,10 @@
+import com.google.common.base.Preconditions;
+import org.apache.commons.collections4.ListUtils;
+
 import java.math.BigDecimal;
+import java.util.List;
+
+import static java.util.Objects.nonNull;
 
 /**
  * Created by mtumilowicz on 2018-11-08.
@@ -9,13 +15,31 @@ public class Person {
     private String surname;
     private int age;
     private BigDecimal salary;
+    private List<String> hobbies;
 
-    public Person(int id, String name, String surname, int age, BigDecimal salary) {
+    public Person(int id, 
+                  String name, 
+                  String surname, 
+                  int age, 
+                  BigDecimal salary, 
+                  List<String> hobbies) {
         this.id = id;
+        
+        Preconditions.checkArgument(nonNull(name));
         this.name = name;
+        
+        Preconditions.checkArgument(nonNull(surname));
+        Preconditions.checkArgument(surname.matches("[a-zA-Z]+"));
         this.surname = surname;
+        
+        Preconditions.checkArgument(age >= 0);
         this.age = age;
+        
+        Preconditions.checkArgument(nonNull(salary));
+        Preconditions.checkArgument(salary.compareTo(BigDecimal.ZERO) > 0);
         this.salary = salary;
+        
+        this.hobbies = ListUtils.emptyIfNull(hobbies);
     }
 
     public int getId() {
@@ -31,6 +55,7 @@ public class Person {
     }
 
     public void setName(String name) {
+        Preconditions.checkArgument(nonNull(name));
         this.name = name;
     }
 
@@ -39,6 +64,8 @@ public class Person {
     }
 
     public void setSurname(String surname) {
+        Preconditions.checkArgument(nonNull(surname));
+        Preconditions.checkArgument(surname.matches("[a-zA-Z]+"));
         this.surname = surname;
     }
 
@@ -47,6 +74,7 @@ public class Person {
     }
 
     public void setAge(int age) {
+        Preconditions.checkArgument(age >= 0);
         this.age = age;
     }
 
@@ -55,6 +83,16 @@ public class Person {
     }
 
     public void setSalary(BigDecimal salary) {
+        Preconditions.checkArgument(nonNull(salary));
+        Preconditions.checkArgument(salary.compareTo(BigDecimal.ZERO) > 0);
         this.salary = salary;
+    }
+
+    public List<String> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<String> hobbies) {
+        this.hobbies = ListUtils.emptyIfNull(hobbies);
     }
 }
