@@ -11,35 +11,35 @@ Junit4 basics training exercises.
     * create object Person
     * person.setAge(10)
     * verify if person.getAge() is 10
-    ```
-    @Test
-    public void setAgeTest() {
-    // given
-        Person person = new Person();
-        
-    // when    
-        person.setAge(10);
-        
-    // then
-        assertThat(person.getAge(), is(10));
-    }    
-    ```
+        ```
+        @Test
+        public void setAgeTest() {
+        // given
+            Person person = new Person();
+            
+        // when    
+            person.setAge(10);
+            
+        // then
+            assertThat(person.getAge(), is(10));
+        }    
+        ```
     imports:
-    ```
-    import static org.hamcrest.CoreMatchers.is;
-    import static org.junit.Assert.*;
-    ```
-1. Verifying exceptions:
-    ```
-    @Test(expected = IllegalArgumentException.class)
-    public void setAgeTest() {
-    // given
-        Person person = new Person();
-        
-    // when
-        person.setAge(-4);
-    }    
-    ```
+        ```
+        import static org.hamcrest.CoreMatchers.is;
+        import static org.junit.Assert.*;
+        ```
+    * **Verifying exceptions**:
+        ```
+        @Test(expected = IllegalArgumentException.class)
+        public void setAgeTest() {
+        // given
+            Person person = new Person();
+            
+        // when
+            person.setAge(-4);
+        }    
+        ```
 
 # tasks
 1. Test class `entities.Person`
