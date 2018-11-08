@@ -14,9 +14,13 @@ Junit4 basics training exercises.
     ```
     @Test
     public void setAgeTest() {
+    // given
         Person person = new Person();
+        
+    // when    
         person.setAge(10);
         
+    // then
         assertThat(person.getAge(), is(10));
     }    
     ```
@@ -29,7 +33,10 @@ Junit4 basics training exercises.
     ```
     @Test(expected = IllegalArgumentException.class)
     public void setAgeTest() {
+    // given
         Person person = new Person();
+        
+    // when
         person.setAge(-4);
     }    
     ```
@@ -40,8 +47,6 @@ Junit4 basics training exercises.
     * constructor - exceptions (parameter validation)
     * setters + getters - OK
     * setters - exceptions (parameter validation)
-    * check equals contract
-    * check hashcode contract
     * addAllHobbiesTo - no common hobbies
     * addAllHobbiesTo - some common hobbies
     * addHobby - add already existing
