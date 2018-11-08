@@ -103,6 +103,10 @@ public class Person {
         
         other.hobbies.addAll(this.hobbies);
     }
+    
+    public void addHobbie(String hobbie) {
+        this.hobbies.add(hobbie);
+    }
 
     @Override
     public boolean equals(Object o) {
